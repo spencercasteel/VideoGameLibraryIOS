@@ -9,19 +9,17 @@
 import Foundation
 
 class VideoGame {
-    let dueDate: Bool
-    let title: String
-    let genre: String
-    let description: String
-    let checkedIn: Bool
-    let rating: String
+    var dueDate: Date?
+    var title: String
+    var genre: String
+    var description: String
+    var checkedIn: Bool = true
+    var rating: String
     
-    init(dueDate: Bool, title: String, genre: String, description: String, checkedIn: Bool, rating: String) {
-        self.dueDate = dueDate
+    init(title: String, genre: String, description: String, rating: String) {
         self.title = title
         self.genre = genre
         self.description = description
-        self.checkedIn = checkedIn
         self.rating = rating
     }
 }

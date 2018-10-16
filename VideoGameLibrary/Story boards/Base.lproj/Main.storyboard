@@ -35,7 +35,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCe-75-pTV">
-                                                    <rect key="frame" x="20" y="48.5" width="337" height="21.5"/>
+                                                    <rect key="frame" x="20" y="48.5" width="92" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -56,10 +56,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qh-ik-PAd">
-                                                    <rect key="frame" x="365" y="48.5" width="11" height="21.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qh-ik-PAd">
+                                                    <rect key="frame" x="360" y="48.5" width="16" height="21.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="11" id="Oq1-Qg-zEp"/>
+                                                        <constraint firstAttribute="width" constant="16" id="zma-xR-Tag"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -69,13 +69,13 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="Vy5-oQ-QbX" secondAttribute="bottom" id="DCL-Cw-jII"/>
                                                 <constraint firstItem="qCe-75-pTV" firstAttribute="leading" secondItem="qG4-Rj-m39" secondAttribute="leadingMargin" id="E1d-lI-gsd"/>
-                                                <constraint firstItem="8qh-ik-PAd" firstAttribute="leading" secondItem="qCe-75-pTV" secondAttribute="trailing" constant="8" id="Qtt-1G-U10"/>
                                                 <constraint firstItem="8qh-ik-PAd" firstAttribute="bottom" secondItem="qG4-Rj-m39" secondAttribute="bottomMargin" id="TJp-cf-Fxz"/>
                                                 <constraint firstItem="Vy5-oQ-QbX" firstAttribute="leading" secondItem="NYN-9b-GWx" secondAttribute="trailing" constant="8" id="a8k-0t-3pZ"/>
                                                 <constraint firstItem="NYN-9b-GWx" firstAttribute="leading" secondItem="h2j-aJ-Nyz" secondAttribute="trailing" constant="8" id="bVs-fQ-lr6"/>
                                                 <constraint firstItem="NYN-9b-GWx" firstAttribute="top" secondItem="qG4-Rj-m39" secondAttribute="topMargin" id="dyy-zY-bas"/>
-                                                <constraint firstItem="Vy5-oQ-QbX" firstAttribute="leading" secondItem="8qh-ik-PAd" secondAttribute="trailing" constant="8" id="foA-ux-N3q"/>
+                                                <constraint firstItem="Vy5-oQ-QbX" firstAttribute="leading" secondItem="8qh-ik-PAd" secondAttribute="trailing" constant="8" id="hrH-ai-UAA"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="qCe-75-pTV" secondAttribute="bottom" id="mz2-YS-X4X"/>
+                                                <constraint firstItem="8qh-ik-PAd" firstAttribute="leading" secondItem="qCe-75-pTV" secondAttribute="trailing" constant="248" id="oJf-hV-Efs"/>
                                                 <constraint firstItem="Vy5-oQ-QbX" firstAttribute="top" secondItem="qG4-Rj-m39" secondAttribute="top" id="pUQ-wf-B0V"/>
                                                 <constraint firstAttribute="trailing" secondItem="Vy5-oQ-QbX" secondAttribute="trailing" id="tkV-Fu-kMo"/>
                                                 <constraint firstItem="h2j-aJ-Nyz" firstAttribute="top" secondItem="qG4-Rj-m39" secondAttribute="topMargin" id="zjh-sg-k5l"/>
@@ -88,6 +88,7 @@
                                             <outlet property="ratingLabel" destination="8qh-ik-PAd" id="cTV-lZ-VFc"/>
                                             <outlet property="statusView" destination="Vy5-oQ-QbX" id="B3w-gj-kuw"/>
                                             <outlet property="titleLabel" destination="h2j-aJ-Nyz" id="wcD-hu-0O0"/>
+                                            <segue destination="1O2-eY-8ak" kind="show" id="hIo-3Y-nq8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -118,6 +119,14 @@
             </objects>
             <point key="canvasLocation" x="1075.3623188405797" y="133.25892857142856"/>
         </scene>
+        <!--GameCellFile-->
+        <scene sceneID="EoU-Bc-G9q">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GameCellFile" id="1O2-eY-8ak" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="50o-eZ-jgV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2071" y="-53"/>
+        </scene>
         <!--Add Game-->
         <scene sceneID="lql-or-Qa7">
             <objects>
@@ -134,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RJJ-qd-qzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1800" y="130"/>
+            <point key="canvasLocation" x="2072" y="421"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oCW-ix-5Cv">
@@ -152,7 +161,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gLk-B1-2ir" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17" y="134"/>
+            <point key="canvasLocation" x="236" y="133"/>
         </scene>
     </scenes>
 </document>
