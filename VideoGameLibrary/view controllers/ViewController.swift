@@ -14,9 +14,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "gameCell")
-        cell?.textLabel?.text = "This is a game cell"
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "gameCell") as! GameTableViewCell
+        cell.titleLabel.text = "kgjc"
+        return cell
     }
     
 
