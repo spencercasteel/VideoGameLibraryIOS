@@ -114,6 +114,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="gameListTableView" destination="IJT-JJ-IMK" id="wFv-NK-laG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -172,8 +175,11 @@
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0ie-W6-t4d">
                                         <rect key="frame" x="0.0" y="467" width="398" height="29"/>
                                         <segments>
-                                            <segment title="First"/>
-                                            <segment title="Second"/>
+                                            <segment title="E"/>
+                                            <segment title="E10+"/>
+                                            <segment title="T"/>
+                                            <segment title="M"/>
+                                            <segment title="AO"/>
                                         </segments>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oax-5P-V0a">
@@ -184,6 +190,10 @@
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X01-6w-aCN">
                                         <rect key="frame" x="0.0" y="558" width="398" height="216"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="ucx-Jz-BGc" id="CLb-kK-5Qp"/>
+                                            <outlet property="delegate" destination="ucx-Jz-BGc" id="1KJ-QH-nfa"/>
+                                        </connections>
                                     </pickerView>
                                 </subviews>
                             </stackView>
@@ -205,6 +215,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="GameDescriptionTextFeild" destination="i64-bc-ntQ" id="o8r-Wc-lbW"/>
+                        <outlet property="gameRatingSegmentController" destination="0ie-W6-t4d" id="tN3-P3-rXU"/>
+                        <outlet property="gameTitleTextFeild" destination="xff-81-cBY" id="euL-Lk-U3w"/>
+                        <outlet property="genrePickerView" destination="X01-6w-aCN" id="iXB-XD-sWt"/>
                         <segue destination="Rrl-zU-fZ5" kind="unwind" identifier="unwindToGameList" unwindAction="unwindToGameListWithSegue:" id="tBG-9i-nuh"/>
                     </connections>
                 </viewController>

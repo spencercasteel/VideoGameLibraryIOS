@@ -23,4 +23,8 @@ class GameManager{
     func getGame(at index: Int) -> Game {
         return gameArray[index]
     }
+    
+    func addGame(game: Game) {
+        gameArray.append(game)
+    }
 }
