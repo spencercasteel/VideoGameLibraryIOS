@@ -8,7 +8,7 @@
 
 import Foundation
 
-class VideoGame {
+class Game {
     var dueDate: Date?
     var title: String
     var genre: String

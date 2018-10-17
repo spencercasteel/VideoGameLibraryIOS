@@ -10,20 +10,18 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var gameArray = [VideoGame(title: "Halo 2", genre: "shooter", description: "", rating: "M"), VideoGame(title: "Portal 2", genre: "Puzzel", description: "", rating: "M")]
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gameArray.count
+        return GameManager.sharedInstance.getGameCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gameCell") as! GameTableViewCell
         
-        let currentGame = gameArray[indexPath.row]
+        let currentGame = GameManager.sharedInstance.getGame(at: indexPath.row)
         
-        cell.titleLabel.text = gameArray[indexPath.row].title
-        cell.genreLabel.text = gameArray[indexPath.row].genre
-        cell.ratingLabel.text = gameArray[indexPath.row].rating
+        cell.titleLabel.text = GameManager.sharedInstance.getGame(at: indexPath.row).title
+        cell.genreLabel.text = GameManager.sharedInstance.getGame(at: indexPath.row).genre
+        cell.ratingLabel.text = GameManager.sharedInstance.getGame(at: indexPath.row).rating
         
         if currentGame.checkedIn {
             cell.statusView.backgroundColor = UIColor.green
@@ -42,9 +40,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    gameArray[0].checkedIn = false
     }
 
-
+    @IBAction func unwindToGameList(segue: UIStoryboardSegue) {}
 }
 

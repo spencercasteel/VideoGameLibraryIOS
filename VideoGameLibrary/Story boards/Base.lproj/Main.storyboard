@@ -134,14 +134,82 @@
                     <view key="view" contentMode="scaleToFill" id="hUo-pl-lpS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ah6-hZ-3Y6">
+                                <rect key="frame" x="8" y="88" width="398" height="774"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABn-ma-03s">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="23"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xff-81-cBY">
+                                        <rect key="frame" x="0.0" y="43" width="398" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7B-iI-5sr">
+                                        <rect key="frame" x="0.0" y="93" width="398" height="23"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="i64-bc-ntQ">
+                                        <rect key="frame" x="0.0" y="136" width="398" height="268"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="799-Lb-pdn">
+                                        <rect key="frame" x="0.0" y="424" width="398" height="23"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0ie-W6-t4d">
+                                        <rect key="frame" x="0.0" y="467" width="398" height="29"/>
+                                        <segments>
+                                            <segment title="First"/>
+                                            <segment title="Second"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oax-5P-V0a">
+                                        <rect key="frame" x="0.0" y="515" width="398" height="23"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X01-6w-aCN">
+                                        <rect key="frame" x="0.0" y="558" width="398" height="216"/>
+                                    </pickerView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7UM-XJ-9iN" firstAttribute="bottom" secondItem="ah6-hZ-3Y6" secondAttribute="bottom" id="60K-Ym-fGO"/>
+                            <constraint firstItem="ah6-hZ-3Y6" firstAttribute="leading" secondItem="7UM-XJ-9iN" secondAttribute="leading" constant="8" id="7gK-tF-p3j"/>
+                            <constraint firstItem="7UM-XJ-9iN" firstAttribute="trailing" secondItem="ah6-hZ-3Y6" secondAttribute="trailing" constant="8" id="cEa-aT-lE7"/>
+                            <constraint firstItem="ah6-hZ-3Y6" firstAttribute="top" secondItem="7UM-XJ-9iN" secondAttribute="top" id="sjg-gS-C7q"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7UM-XJ-9iN"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Game" id="gVP-dt-UXf">
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="l1g-wg-NvT"/>
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="l1g-wg-NvT">
+                            <connections>
+                                <action selector="submitButtonTapped:" destination="ucx-Jz-BGc" id="zqI-M6-fhf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Rrl-zU-fZ5" kind="unwind" identifier="unwindToGameList" unwindAction="unwindToGameListWithSegue:" id="tBG-9i-nuh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RJJ-qd-qzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Rrl-zU-fZ5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2072" y="421"/>
         </scene>

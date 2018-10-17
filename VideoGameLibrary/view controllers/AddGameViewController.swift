@@ -27,4 +27,7 @@ class AddGameViewController: UIViewController {
     }
     */
 
+    @IBAction func submitButtonTapped(_ sender: Any) {
+    self.performSegue(withIdentifier: "unwindToGameList", sender: self)
+    }
 }

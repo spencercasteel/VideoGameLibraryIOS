@@ -14,6 +14,7 @@
 		4343638221750AE600ED46F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4343638021750AE600ED46F0 /* Main.storyboard */; };
 		4343638421750AE700ED46F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4343638321750AE700ED46F0 /* Assets.xcassets */; };
 		4343638721750AE700ED46F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4343638521750AE700ED46F0 /* LaunchScreen.storyboard */; };
+		43684D4D2177AC7E00502508 /* gameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43684D4C2177AC7E00502508 /* gameManager.swift */; };
 		439BD0FB2176299D00E489BF /* AddGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BD0FA2176299D00E489BF /* AddGameViewController.swift */; };
 		439BD0FD2176312E00E489BF /* VideoGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BD0FC2176312E00E489BF /* VideoGame.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +29,7 @@
 		4343638321750AE700ED46F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4343638621750AE700ED46F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4343638821750AE700ED46F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43684D4C2177AC7E00502508 /* gameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameManager.swift; sourceTree = "<group>"; };
 		439BD0FA2176299D00E489BF /* AddGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGameViewController.swift; sourceTree = "<group>"; };
 		439BD0FC2176312E00E489BF /* VideoGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +106,7 @@
 				4343637C21750AE600ED46F0 /* AppDelegate.swift */,
 				4343638321750AE700ED46F0 /* Assets.xcassets */,
 				439BD0FC2176312E00E489BF /* VideoGame.swift */,
+				43684D4C2177AC7E00502508 /* gameManager.swift */,
 			);
 			path = Utillities;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				4343637D21750AE600ED46F0 /* AppDelegate.swift in Sources */,
 				439BD0FB2176299D00E489BF /* AddGameViewController.swift in Sources */,
 				439BD0FD2176312E00E489BF /* VideoGame.swift in Sources */,
+				43684D4D2177AC7E00502508 /* gameManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
