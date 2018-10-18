@@ -12,6 +12,7 @@ class GameManager{
     static let sharedInstance = GameManager()
     
     private init() {
+    gameArray[0].dueDate = Date()
     }
     
     private var gameArray = [Game(title: "Halo 2", genre: "shooter", description: "", rating: "M"), Game(title: "Portal 2", genre: "Puzzle", description: "", rating: "M")]
@@ -26,5 +27,9 @@ class GameManager{
     
     func addGame(game: Game) {
         gameArray.append(game)
+    }
+    
+    func removeGame(at index: Int) {
+        gameArray.remove(at: index)
     }
 }

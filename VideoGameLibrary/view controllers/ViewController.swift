@@ -36,9 +36,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell.statusView.backgroundColor = UIColor.red
         }
         
+        if let dueDate = currentGame.dueDate {
+            cell.dueDateLabel.text = formatDate(dueDate)
+        } else {
+            cell.dueDateLabel.text = ""
+        }
+        
         
         return cell
     }
+    
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -47,6 +55,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        //this allows us to return an array of actions that the row will have (if any)
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { _, _ in
+            GameManager.sharedInstance.removeGame(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        return [deleteAction]
     }
 
     @IBAction func unwindToGameList(segue: UIStoryboardSegue) {}

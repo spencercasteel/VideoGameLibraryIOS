@@ -13,7 +13,7 @@ class AddGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     let genres = ["Action", "RPG", "Puzzle", "survival"]
     
     @IBOutlet weak var gameTitleTextFeild: UITextField!
-    @IBOutlet weak var GameDescriptionTextFeild: UITextView!
+    @IBOutlet weak var gameDescriptionTextFeild: UITextView!
     @IBOutlet weak var gameRatingSegmentController: UISegmentedControl!
     @IBOutlet weak var genrePickerView: UIPickerView!
     override func viewDidLoad() {
@@ -44,9 +44,9 @@ class AddGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     */
 
     @IBAction func submitButtonTapped(_ sender: Any) {
-        guard let title = gameTitleTextFeild.text, title.trimmingCharacters(in: .whitespacesAndNewlines) != "", let gameDescription = GameDescriptionTextFeild.text,  gameDescription.trimmingCharacters(in: .whitespacesAndNewlines) != "" else {
+        guard let title = gameTitleTextFeild.text, title.trimmingCharacters(in: .whitespacesAndNewlines) != "", let gameDescription = gameDescriptionTextFeild.text,  gameDescription.trimmingCharacters(in: .whitespacesAndNewlines) != "" else {
             //show an error and return
-            return
+            return showErrorAlert()
         }
         
         var rating: String!
@@ -73,5 +73,15 @@ class AddGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         GameManager.sharedInstance.addGame(game: newGame)
         
         self.performSegue(withIdentifier: "unwindToGameList", sender: self)
+    }
+    
+    func showErrorAlert() {
+        let alertController = UIAlertController(title: "ERROR", message: "You must enter a title and description for the game.", preferredStyle: .actionSheet)
+        let closeAction = UIAlertAction(title: "Close", style: .default) { _ in
+            self.gameTitleTextFeild.text = ""
+            self.gameDescriptionTextFeild.text = ""
+        }
+        alertController.addAction(closeAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
