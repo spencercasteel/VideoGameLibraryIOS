@@ -35,7 +35,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCe-75-pTV">
-                                                    <rect key="frame" x="20" y="48.5" width="92" height="21.5"/>
+                                                    <rect key="frame" x="20" y="48.5" width="307" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -56,10 +56,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qh-ik-PAd">
-                                                    <rect key="frame" x="360" y="48.5" width="16" height="21.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E10+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qh-ik-PAd">
+                                                    <rect key="frame" x="335" y="48" width="41" height="22"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="16" id="zma-xR-Tag"/>
+                                                        <constraint firstAttribute="width" constant="41" id="VJg-Of-8ZQ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -67,6 +67,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="8qh-ik-PAd" firstAttribute="leading" secondItem="qCe-75-pTV" secondAttribute="trailing" constant="8" id="3Ck-Cq-Ld9"/>
                                                 <constraint firstAttribute="bottom" secondItem="Vy5-oQ-QbX" secondAttribute="bottom" id="DCL-Cw-jII"/>
                                                 <constraint firstItem="qCe-75-pTV" firstAttribute="leading" secondItem="qG4-Rj-m39" secondAttribute="leadingMargin" id="E1d-lI-gsd"/>
                                                 <constraint firstItem="8qh-ik-PAd" firstAttribute="bottom" secondItem="qG4-Rj-m39" secondAttribute="bottomMargin" id="TJp-cf-Fxz"/>
@@ -75,7 +76,6 @@
                                                 <constraint firstItem="NYN-9b-GWx" firstAttribute="top" secondItem="qG4-Rj-m39" secondAttribute="topMargin" id="dyy-zY-bas"/>
                                                 <constraint firstItem="Vy5-oQ-QbX" firstAttribute="leading" secondItem="8qh-ik-PAd" secondAttribute="trailing" constant="8" id="hrH-ai-UAA"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="qCe-75-pTV" secondAttribute="bottom" id="mz2-YS-X4X"/>
-                                                <constraint firstItem="8qh-ik-PAd" firstAttribute="leading" secondItem="qCe-75-pTV" secondAttribute="trailing" constant="248" id="oJf-hV-Efs"/>
                                                 <constraint firstItem="Vy5-oQ-QbX" firstAttribute="top" secondItem="qG4-Rj-m39" secondAttribute="top" id="pUQ-wf-B0V"/>
                                                 <constraint firstAttribute="trailing" secondItem="Vy5-oQ-QbX" secondAttribute="trailing" id="tkV-Fu-kMo"/>
                                                 <constraint firstItem="h2j-aJ-Nyz" firstAttribute="top" secondItem="qG4-Rj-m39" secondAttribute="topMargin" id="zjh-sg-k5l"/>
@@ -88,7 +88,6 @@
                                             <outlet property="ratingLabel" destination="8qh-ik-PAd" id="cTV-lZ-VFc"/>
                                             <outlet property="statusView" destination="Vy5-oQ-QbX" id="B3w-gj-kuw"/>
                                             <outlet property="titleLabel" destination="h2j-aJ-Nyz" id="wcD-hu-0O0"/>
-                                            <segue destination="1O2-eY-8ak" kind="show" id="hIo-3Y-nq8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -116,6 +115,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="gameListTableView" destination="IJT-JJ-IMK" id="wFv-NK-laG"/>
+                        <segue destination="1O2-eY-8ak" kind="show" identifier="segueToDescription" id="90l-CA-Yf5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -162,7 +162,6 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="i64-bc-ntQ">
                                         <rect key="frame" x="0.0" y="136" width="398" height="268"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -215,7 +214,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="GameDescriptionTextFeild" destination="i64-bc-ntQ" id="o8r-Wc-lbW"/>
+                        <outlet property="gameDescriptionTextFeild" destination="i64-bc-ntQ" id="GL9-2R-8o9"/>
                         <outlet property="gameRatingSegmentController" destination="0ie-W6-t4d" id="tN3-P3-rXU"/>
                         <outlet property="gameTitleTextFeild" destination="xff-81-cBY" id="euL-Lk-U3w"/>
                         <outlet property="genrePickerView" destination="X01-6w-aCN" id="iXB-XD-sWt"/>

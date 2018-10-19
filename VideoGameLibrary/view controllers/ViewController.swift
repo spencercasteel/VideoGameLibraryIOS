@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var gameListTableView: UITableView!
     
+    var currentGame: Game!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     
@@ -26,9 +28,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let currentGame = GameManager.sharedInstance.getGame(at: indexPath.row)
         
-        cell.titleLabel.text = GameManager.sharedInstance.getGame(at: indexPath.row).title
-        cell.genreLabel.text = GameManager.sharedInstance.getGame(at: indexPath.row).genre
-        cell.ratingLabel.text = GameManager.sharedInstance.getGame(at: indexPath.row).rating
+        cell.titleLabel.text = currentGame.title
+        cell.genreLabel.text = currentGame.genre
+        cell.ratingLabel.text = currentGame.rating
         
         if currentGame.checkedIn {
             cell.statusView.backgroundColor = UIColor.green
@@ -46,10 +48,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? GameCellViewController {
+            destination.game = currentGame
+        }
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    self.currentGame = GameManager.sharedInstance.getGame(at: indexPath.row)
+        self.performSegue(withIdentifier: "segueToDescription", sender: self)
     }
     
     override func viewDidLoad() {
@@ -63,7 +71,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             GameManager.sharedInstance.removeGame(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
-        return [deleteAction]
+        let gameForIndex = GameManager.sharedInstance.getGame(at: indexPath.row)
+        let title = gameForIndex.checkedIn ? "Check Out" : "Check In"
+        
+        let checkOutOrInAction = UITableViewRowAction(style: .normal, title: title) { _, _ in
+            GameManager.sharedInstance.checkGameInOrOut(at: indexPath.row)
+            tableView.reloadRows(at: [indexPath], with: .fade)
+        }
+        
+        return [deleteAction, checkOutOrInAction]
     }
 
     @IBAction func unwindToGameList(segue: UIStoryboardSegue) {}

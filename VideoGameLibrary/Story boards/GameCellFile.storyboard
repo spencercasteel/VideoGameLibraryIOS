@@ -9,16 +9,51 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Game Cell View Controller-->
         <scene sceneID="l8d-rL-P16">
             <objects>
-                <viewController id="UHe-Xj-YQp" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="SZD-Ep-EnF">
+                <viewController id="UHe-Xj-YQp" customClass="GameCellViewController" customModule="VideoGameLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SZD-Ep-EnF" customClass="GameTableViewCell" customModule="VideoGameLibrary" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5e-7w-Fjz">
+                                <rect key="frame" x="0.0" y="30" width="375" height="26.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="game description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCf-zD-GKa">
+                                <rect key="frame" x="0.0" y="105.5" width="375" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52e-jN-tcV">
+                                <rect key="frame" x="0.0" y="76.5" width="375" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zLK-HS-WYG" firstAttribute="trailing" secondItem="rCf-zD-GKa" secondAttribute="trailing" id="9LT-Mu-iNA"/>
+                            <constraint firstItem="52e-jN-tcV" firstAttribute="top" secondItem="n5e-7w-Fjz" secondAttribute="bottom" constant="20" id="LYi-Mj-Mx8"/>
+                            <constraint firstItem="52e-jN-tcV" firstAttribute="leading" secondItem="zLK-HS-WYG" secondAttribute="leading" id="LqI-zI-sC8"/>
+                            <constraint firstItem="n5e-7w-Fjz" firstAttribute="top" secondItem="zLK-HS-WYG" secondAttribute="top" constant="10" id="Qwv-YT-qa7"/>
+                            <constraint firstItem="zLK-HS-WYG" firstAttribute="trailing" secondItem="n5e-7w-Fjz" secondAttribute="trailing" id="htZ-YX-rB8"/>
+                            <constraint firstItem="rCf-zD-GKa" firstAttribute="top" secondItem="52e-jN-tcV" secondAttribute="bottom" constant="5" id="iWF-HC-jvh"/>
+                            <constraint firstItem="rCf-zD-GKa" firstAttribute="leading" secondItem="zLK-HS-WYG" secondAttribute="leading" id="lqL-Yt-p66"/>
+                            <constraint firstItem="n5e-7w-Fjz" firstAttribute="leading" secondItem="zLK-HS-WYG" secondAttribute="leading" id="qdx-aA-obg"/>
+                            <constraint firstItem="zLK-HS-WYG" firstAttribute="trailing" secondItem="52e-jN-tcV" secondAttribute="trailing" id="rw0-8O-fuT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zLK-HS-WYG"/>
                     </view>
+                    <connections>
+                        <outlet property="gameDescriptionLabel" destination="rCf-zD-GKa" id="A2N-nG-vxQ"/>
+                        <outlet property="gameTitleLabel" destination="n5e-7w-Fjz" id="xpV-Za-ySs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p9A-eU-EsX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
