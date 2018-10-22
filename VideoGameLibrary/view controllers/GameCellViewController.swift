@@ -18,7 +18,7 @@ class GameCellViewController: UIViewController {
         super.viewDidLoad()
         
         gameTitleLabel.text = game.title
-        gameDescriptionLabel.text = game.description
+        gameDescriptionLabel.text = game.gameDescription
 
 
         // Do any additional setup after loading the view.

@@ -8,8 +8,8 @@
 
 import UIKit
 
-class AddGameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
+class AddGameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UITextViewDelegate{
+    
     let genres = ["Action", "RPG", "Puzzle", "survival"]
     
     @IBOutlet weak var gameTitleTextFeild: UITextField!
@@ -18,8 +18,23 @@ class AddGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var genrePickerView: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        gameTitleTextFeild.delegate = self
+    }
+    //when touched on screen keybourd goes away
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        textView.resignFirstResponder()
+        
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -34,15 +49,15 @@ class AddGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         return genres[row]
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
     @IBAction func submitButtonTapped(_ sender: Any) {
         guard let title = gameTitleTextFeild.text, title.trimmingCharacters(in: .whitespacesAndNewlines) != "", let gameDescription = gameDescriptionTextFeild.text,  gameDescription.trimmingCharacters(in: .whitespacesAndNewlines) != "" else {
             //show an error and return
@@ -66,9 +81,17 @@ class AddGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             rating = "E"
         }
         
-       let genre = genres[genrePickerView.selectedRow(inComponent: 0)]
+        let genre = genres[genrePickerView.selectedRow(inComponent: 0)]
         
-        let newGame = Game(title: title, genre: genre, description: gameDescription, rating: rating)
+        //Default initializer for the game class
+        let newGame = Game()
+        
+        
+        //setting the properties for the new game using dot notation
+        newGame.title = title
+        newGame.gameDescription = gameDescription
+        newGame.genre = genre
+        newGame.rating = rating
         
         GameManager.sharedInstance.addGame(game: newGame)
         
