@@ -10,17 +10,20 @@ import UIKit
 
 class AddGameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UITextViewDelegate{
     
+    //array for genres
     let genres = ["Action", "RPG", "Puzzle", "survival"]
     
     @IBOutlet weak var gameTitleTextFeild: UITextField!
     @IBOutlet weak var gameDescriptionTextFeild: UITextView!
     @IBOutlet weak var gameRatingSegmentController: UISegmentedControl!
     @IBOutlet weak var genrePickerView: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         gameTitleTextFeild.delegate = self
+   
     }
-    //when touched on screen keybourd goes away
+    //when touched on screen keyboard goes away
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -37,6 +40,7 @@ class AddGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         return true
     }
     
+    //code for picker view
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -58,6 +62,7 @@ class AddGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
      }
      */
     
+    //everything that happens when the submit button is pressed
     @IBAction func submitButtonTapped(_ sender: Any) {
         guard let title = gameTitleTextFeild.text, title.trimmingCharacters(in: .whitespacesAndNewlines) != "", let gameDescription = gameDescriptionTextFeild.text,  gameDescription.trimmingCharacters(in: .whitespacesAndNewlines) != "" else {
             //show an error and return
@@ -65,7 +70,7 @@ class AddGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         }
         
         var rating: String!
-        
+        //all rating options
         switch gameRatingSegmentController.selectedSegmentIndex {
         case 0:
             rating = "E"
@@ -98,6 +103,7 @@ class AddGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         self.performSegue(withIdentifier: "unwindToGameList", sender: self)
     }
     
+    //error alert for when user doesnt enter all data needed
     func showErrorAlert() {
         let alertController = UIAlertController(title: "ERROR", message: "You must enter a title and description for the game.", preferredStyle: .actionSheet)
         let closeAction = UIAlertAction(title: "Close", style: .default) { _ in
